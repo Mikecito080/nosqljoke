@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chistes con Firebase</title>
+    <link rel="stylesheet" href="src/style.css">
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <section id="login-section" class="hidden">
+            <h2>Iniciar Sesión</h2>
+            <input type="email" id="loginEmail" placeholder="Email">
+            <input type="password" id="loginPassword" placeholder="Contraseña">
+            <button id="loginButton">Iniciar Sesión</button>
+            <p><a href="#" id="showRegister">¿No tienes cuenta? Regístrate</a></p>
+            <p id="loginError" class="error-message"></p>
+        </section>
+
+        <section id="register-section" class="hidden">
+            <h2>Registrarse</h2>
+            <input type="email" id="registerEmail" placeholder="Email">
+            <input type="password" id="registerPassword" placeholder="Contraseña">
+            <button id="registerButton">Registrarse</button>
+            <p><a href="#" id="showLogin">¿Ya tienes cuenta? Iniciar Sesión</a></p>
+            <p id="registerError" class="error-message"></p>
+        </section>
+
+        <section id="dashboard-section" class="hidden">
+            <h2>¡Bienvenido a Chistes Central!</h2>
+            <p>Conectado como: <span id="userEmail"></span></p>
+            <button id="logoutButton">Cerrar Sesión</button>
+            <button id="profileButton">Ver Perfil</button>
+
+            <h3>Chiste Aleatorio:</h3>
+            <p id="jokeDisplay">Cargando chiste...</p>
+            <button id="newJokeButton">Nuevo Chiste</button>
+            <button id="saveJokeButton">Guardar Chiste</button>
+            <p id="saveMessage" class="success-message"></p>
+        </section>
+
+        <section id="profile-section" class="hidden">
+            <h2>Tus Chistes Guardados</h2>
+            <button id="backToDashboard">Volver al Dashboard</button>
+            <ul id="savedJokesList">
+                </ul>
+            <p id="profileMessage"></p>
+        </section>
+    </div>
+
+    <script type="module" src="src/firebase.js"></script>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
